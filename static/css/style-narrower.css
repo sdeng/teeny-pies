@@ -1,0 +1,153 @@
+/*
+	Prologue 1.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
+
+	body,input,textarea,select
+	{
+		font-size: 16pt;
+	}
+
+	h2
+	{
+	}
+
+		h2 br
+		{
+			display: none;
+		}
+
+	.container
+	{
+		padding: 0 2em 0 2em;
+	}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+	#header
+	{
+		position: relative;
+		width: 100%;
+		background: none !important;
+		box-shadow: none !important;
+		left: 0;
+		height: auto;
+		min-height: 0;
+	}
+	
+		#header .top
+		{	
+			position: relative;
+			top: 30px;
+		}
+	
+		#header .bottom
+		{
+			padding-top: 1em;
+			margin-top: 1em;
+			position: relative;
+			background: none;
+			bottom: 0;
+			padding-bottom: 0;
+		}
+
+	#logo
+	{
+		margin: 1.5em 1.25em 1.25em 1.25em;
+	}
+
+	#nav
+	{
+	}
+	
+		#nav ul
+		{
+		}
+		
+			#nav ul li
+			{
+			}
+			
+				#nav ul li a
+				{
+					padding: 0.5em 1.25em 0.5em 1.25em;
+				}
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+	
+	#footer
+	{
+		margin-left: 0;
+	}
+
+/*********************************************************************************/
+/* Main                                                                          */
+/*********************************************************************************/
+
+	#main
+	{
+		margin-left: 0;
+	}
+	
+	#main > section.five .notes{
+		float: none;
+		width: auto;
+		clear: none;
+		text-align: center;
+	}
+	
+	#main > section.five form{
+		float: none;
+		width: auto;
+	}
+	
+			
+	#main > section.book-feature .image figcaption{
+		text-align: center;
+		margin: 2em auto 0;
+		float: none;
+		width: 100%;
+		max-width: 500px;
+	}
+	
+	#main > section.book-feature .image img{
+		float: none;
+		margin: 0 auto;
+		min-width: 290px;
+		width: 100%;
+	}
+
+/*********************************************************************************/
+/* Side Panel                                                                    */
+/*********************************************************************************/
+
+	#sidePanel
+	{
+		background: #539689 url('images/overlay.png');
+		box-shadow: inset -0.25em 0 0.25em 0 rgba(0,0,0,0.125);
+	}
+
+	#sidePanelToggle
+	{
+	}
+	
+		#sidePanelToggle .toggle
+		{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(128,136,144,0.5) url('images/toggle.svg') center center no-repeat;
+			border-radius: 0.35em;
+			margin: 0.25em;
+		}

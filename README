@@ -1,0 +1,12 @@
+[ Development Server ]
+
+cd src/
+DEPLOYMENT='development' python flask_app.py
+
+
+[ Initialize Database ]
+
+cd src/
+ipython
+>> import database
+>> database.create_tables()

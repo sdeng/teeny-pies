@@ -1,0 +1,9 @@
+.DS_Store
+.AppleDouble
+*~
+*.swp
+*.pyc
+*.db
+*.db-journal
+/ve
+/static/index.html

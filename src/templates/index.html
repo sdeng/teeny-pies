@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Teeny Pies | Washington D.C</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="A lady bakership, focusing in pie, lovingly run by writer &amp; baker Teeny Lamothe." />
+        <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+        <script src="js/jquery.min.js"></script>
+        {% if context.edit_mode %}
+        <script src="js/jquery.ui.widget.js"></script>
+        <script src="js/jquery.fileupload.js"></script>
+        {% endif %}
+        <script src="js/skel.min.js"></script>
+        <script src="js/skel-panels.min.js"></script>
+        <script src="js/init.js"></script>
+        
+        <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+          <!--[if lte IE 8]>
+            <link href='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet' />
+          <![endif]-->
+        <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+        <noscript>
+            <link rel="stylesheet" href="css/skel-noscript.css" />
+            <link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="css/style-wide.css" />
+        </noscript>
+        <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+    </head>
+    <body>
+
+        <!-- Header -->
+            <header id="header" class="skel-panels-fixed">
+
+                <div class="top">
+                    <!-- Nav -->
+                        <nav id="nav">
+                            {% if context.edit_mode %}
+                            <ul>
+                                <li class="button" id="edit-reset">RESET</li>
+                            </ul>
+                            <ul>
+                                <li class="button" id="edit-publish">PUBLISH</li>
+                            </ul>
+                            {% endif %}
+
+                            <ul>
+                                <li>
+                                    <a href="#top" id="top-link" class="skel-panels-ignoreHref">
+                                        <span>welcome.</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#about" id="about-link" class="skel-panels-ignoreHref">
+                                        <span>about.</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#menu" id="menu-link" class="skel-panels-ignoreHref">
+                                        <span>pies.</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#where" id="where-link" class="skel-panels-ignoreHref">
+                                        <span>where.</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#contact" id="contact-link" class="skel-panels-ignoreHref">
+                                        <span>contact.</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        
+                </div>
+                
+                <div class="bottom">
+                    <span class="brand">
+                        <img src="images/teeny-logo_badge.svg" alt="" />
+                    </span>
+                </div>
+            
+            </header>
+
+        <!-- Main -->
+            <div id="main">
+
+            
+                <!-- Intro -->
+                    <section id="top" class="one">
+                        {% if context.edit_mode %}
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    <ul class="flash-messages">
+                                        {% for message in messages %}
+                                        <li class="button">{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% endwith %}
+                        {% endif %}
+
+                        <div class="container">
+
+                            <!-- Logo -->
+                            <header id="big-brand">
+                                <span class="brand"><img src="images/teeny-logo_web.svg" alt="" /></span>
+                                <h1 id="title">Teeny Pies.</h1>
+                                <h2 class="byline">eat pie. be happy. eat more pie</h2>
+                            </header>
+
+                            <p class="intro" {% if context.edit_mode %}data-text-identifier="intro"{% endif %}>{{ context.intro | safe }}</p>
+
+                            <footer>
+                                <a href="#menu" class="button scrolly">want some pie?</a>
+                            </footer>
+
+                        </div>
+                    </section>
+                    
+                
+
+                <!-- About Me -->
+                    <section id="about" class="two">
+                        <div class="container">
+
+                            <header class="section-head">
+                                <h2><em>About</em></h2>
+
+                                <p class="intro" {% if context.edit_mode %}data-text-identifier="about_intro"{% endif %}>{{ context.about_intro | safe }}</p>
+                            </header>
+                            
+                            <figure class="image featured">
+                                <img src="images/pics/about_graphic.jpg" alt="" />
+                            </figure>
+                            
+                             <p class="copy" {% if context.edit_mode %}data-text-identifier="about_copy_1"{% endif %}>{{ context.about_copy_1 | safe }}</p>
+                             <p class="copy" {% if context.edit_mode %}data-text-identifier="about_copy_2"{% endif %}>{{ context.about_copy_2 | safe }}</p>
+                            
+                        </div>
+                    </section>
+                    
+                    
+                    <section id="book" class="two book-feature">
+                    	
+                            <p class="copy">For more on Teeny’s awesome journey, check out her writing and pictures on <a href="http://teenypies.tumblr.com/">Tumblr</a>, or checkout Teeny's new book...</p>
+
+                        <div class="container">
+                            <figure class="image">
+                                <a href="http://www.amazon.com/gp/product/0761173366/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0761173366&linkCode=as2&tag=teenypies-20%22"><img src="images/pics/teeny-book.png" alt="" /></a>
+                                
+                                <figcaption>
+                                    <h4>Teeny wrote a book!</h4>
+                                    
+                                    <p class="copy" {% if context.edit_mode %}data-text-identifier="book_copy_1"{% endif %}>{{ context.book_copy_1 | safe }}</p>
+
+                                    <p class="copy" {% if context.edit_mode %}data-text-identifier="book_copy_2"{% endif %}>{{ context.book_copy_2 | safe }}</p>
+                                    
+                                </figcaption>
+                            </figure>
+
+                        </div>
+                    </section>
+                <!-- Portfolio -->
+                    <section id="menu" class="three">
+                        <div class="container">
+                    
+                            <header class="section-head">
+                                <h2><em>Pies</em></h2>
+                                
+                                <p class="intro" {% if context.edit_mode %}data-text-identifier="pies_intro"{% endif %}>{{ context.pies_intro | safe }}</p>
+                            </header>
+                        
+                            <article class="row">                           
+                                <header class="sub-head" {% if context.edit_mode %}data-container-identifier="pie_container_1"{% endif %}>
+                                    <h3 {% if context.edit_mode %}data-text-identifier="pies_heading_1"{% endif %}>{{ context.pies_heading_1 | safe }}</h3>
+                                </header>
+                                {% for figure in context.pie_container_1 %}
+                                <figure class="item 4u" {% if figure.hidden %}style="display: none;"{% endif %}>
+                                    <span class="image full"><img src="images/pies/{{ figure.pie_picture | safe }}" alt="{{ figure.pie_name }} Pie Picture" {% if context.edit_mode %}data-image-identifier="pie_picture_{{ figure.index }}"{% endif %}/></span>
+
+                                    <figcaption class="no-note">
+                                        <h4 {% if context.edit_mode %}data-text-identifier="pies_name_{{ figure.index }}"{% endif %}>{{ figure.pie_name | safe }}</h4>
+                                        <p class="price" {% if context.edit_mode %}data-text-identifier="pies_price_{{ figure.index }}"{% endif %}>{{ figure.pie_price | safe }}</p>
+                                    </figcaption>
+                                </figure>
+                                {% endfor %}
+                            </article>
+                            
+                            <article class="row">                           
+                                <header class="sub-head" {% if context.edit_mode %}data-container-identifier="pie_container_2"{% endif %}>
+                                    <h3 {% if context.edit_mode %}data-text-identifier="pies_heading_2"{% endif %}>{{ context.pies_heading_2 | safe }}</h3>
+                                </header>
+                                {% for figure in context.pie_container_2 %}
+                                <figure class="item 6u" {% if figure.hidden %}style="display: none;"{% endif %}>
+                                    <span class="image full"><img src="images/pies/{{ figure.pie_picture | safe }}" alt="{{ figure.pie_name }} Pie Picture" {% if context.edit_mode %}data-image-identifier="pie_picture_{{ figure.index }}"{% endif %}/></span>
+                                    
+                                    <figcaption class="no-note">
+                                        <h4 {% if context.edit_mode %}data-text-identifier="pies_name_{{ figure.index }}"{% endif %}>{{ figure.pie_name | safe }}</h4>
+                                        <p class="price" {% if context.edit_mode %}data-text-identifier="pies_price_{{ figure.index }}"{% endif %}>{{ figure.pie_price | safe }}</p>
+                                    </figcaption>
+                                </figure>
+                                {% endfor %}
+
+                            </article>
+                            <p class="copy" {% if context.edit_mode %}data-text-identifier="pie_copy"{% endif %}>{{ context.pie_copy | safe }}</p>
+                        </div>
+                    </section>
+                    
+                    <!-- Map -->
+                    <section id="where" class="four">
+                        <div class="container">
+
+                            <header class="section-head">
+                                <h2><em>Where</em></h2>
+                                
+                                <p class="intro" {% if context.edit_mode %}data-text-identifier="map_intro"{% endif %}>{{ context.map_intro | safe }}</p>
+                            </header>
+
+                            {% if context.edit_mode %} 
+                            <textarea id="jsoneditor" style="max-width: 940px; margin: 0 auto 2em; font-size: 14px; font-family: sans-serif; color: #000000;" cols="75" rows="15"></textarea>
+                            {% endif %}
+
+                            <div id='map' class='light'></div>
+                            <script type='text/javascript'>
+                                var map = L.mapbox.map('map', 'digitalmig.i9h2aa07');
+                                
+                                var geoJson = {{ context.geojson | safe }};
+                                
+                                // Add custom popups to each using our custom feature properties
+                                map.markerLayer.on('layeradd', function(e) {
+                                    var marker = e.layer,
+                                        feature = marker.feature;
+                                
+                                    // Create custom popup content
+                                    var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' +
+                                                        '   <h2>' + feature.properties.location + '</h2>' +
+                                                        '   <p><b>' + feature.properties.address + '</b> ' + feature.properties.time + '</p>' +
+                                                        '</a>';
+                                
+                                    // http://leafletjs.com/reference.html#popup
+                                    marker.bindPopup(popupContent,{
+                                        closeButton: false,
+                                        minWidth: 220
+                                    });
+                                });
+                                
+                                map.markerLayer.on('click', function(e) {
+                                    map.panTo(e.layer.getLatLng());
+                                });
+                                
+                                // Add features to the map
+                                map.markerLayer.setGeoJSON(geoJson);
+                                map.setView([38.95, -77.00642], 12);
+                                map.scrollWheelZoom.disable();
+                            </script>
+                                
+                            <p class="copy" {% if context.edit_mode %}data-text-identifier="map_copy"{% endif %}>{{ context.map_copy | safe }}</p>
+                        </div>
+                    </section>
+            
+                    <!-- Contact -->
+                    <section id="contact" class="five">
+                        <div class="container">
+
+                            <header class="section-head">
+                                <h2><em>Contact</em></h2>
+                                <p class="intro" {% if context.edit_mode %}data-text-identifier="contact_intro"{% endif %}>{{ context.contact_intro | safe }}</p>
+                            </header>
+
+                            <form id="teeny-contact-form" method="post" action="/email-order">
+                                <div class="row half">
+                                    <div class="6u"><input type="text" class="text" name="name" placeholder="Name" /></div>
+                                    <div class="6u"><input type="text" class="text" name="email" placeholder="Email" /></div>
+                                </div>
+                                <div class="row half">
+                                    <div class="12u">
+                                        <textarea name="message" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <script type="text/javascript">
+                                        var RecaptchaOptions = {
+                                            theme: 'clean'
+                                        };
+                                    </script>
+                                    <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6Ley_fsSAAAAAOber3unKPu8jvq8gAkZ4q2xtWW4"></script>
+                                    <noscript>
+                                        <iframe src="http://www.google.com/recaptcha/api/noscript?k=6Ley_fsSAAAAAOber3unKPu8jvq8gAkZ4q2xtWW4" height="300" width="500" frameborder="0"></iframe>
+                                        <br />
+                                        <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+                                        </textarea>
+                                        <input type="hidden" name="recaptcha_response_field" value="manual_challenge" />
+                                    </noscript>
+                                </div>
+
+                                <div class="row">
+                                    <div class="12u">
+                                        <a data-action="contact-submit" class="button submit">Send Message</a>
+                                    </div>
+                                </div>
+                            </form>
+                        
+                            <aside class="notes copy">
+                                <dl>
+                                    <dt {% if context.edit_mode %}data-text-identifier="contact_copy_1_title"{% endif %}>{{ context.contact_copy_1_title | safe }}</dt>
+                                    <dd {% if context.edit_mode %}data-text-identifier="contact_copy_1"{% endif %}>{{ context.contact_copy_1 | safe }}</dd>
+                                
+                                    <dt {% if context.edit_mode %}data-text-identifier="contact_copy_2_title"{% endif %}>{{ context.contact_copy_2_title | safe }}</dt>
+                                    <dd {% if context.edit_mode %}data-text-identifier="contact_copy_2"{% endif %}>{{ context.contact_copy_2 | safe }}</dd>
+                                
+                                    <dt {% if context.edit_mode %}data-text-identifier="contact_copy_3_title"{% endif %}>{{ context.contact_copy_3_title | safe }}</dt>
+                                    <dd {% if context.edit_mode %}data-text-identifier="contact_copy_3"{% endif %}>{{ context.contact_copy_3 | safe }}</dd>
+                                </dl>
+                            </aside>
+                            
+                            <br class="clear" />
+                        </div>
+                    </section>
+            
+            </div>
+            
+            
+
+        <!-- Footer -->
+        <footer id="footer">
+            <nav class="contact-nav container">
+                <ul class="icons">
+                    <li><a href="https://twitter.com/teenypies" class="icon icon-twitter" title="More on Twitter"><span>Twitter</span></a></li>
+                    <li><a href="http://instagram.com/teenypies" class="icon icon-instagram" title="More on Instagram"><span>Instagram</span></a></li>
+                    <li><a href="http://teenypies.tumblr.com/" class="icon icon-tumblr" title="More on Tumblr"><span>Tumblr</span></a></li>
+                    <li><a href="http://www.pinterest.com/teenypies/" class="icon icon-pinterest" title="More on Pinterest"><span>Pinterest</span></a></li>
+                    <li><a href="http://www.workman.com/products/9780761173366/" class="icon icon-bookmark" title="Cookbook on Amazon"><span>Cookbook</span></a></li>
+                    <!--<li><a href="#" class="icon icon-envelope"><span>Email</span></a></li>-->
+                </ul>
+            </nav>          
+        </footer>
+        
+    <script type='text/javascript'>
+        /* attach a submit handler to the form */
+        $("#teeny-contact-form").submit(function(event) {
+            /* stop form from submitting normally */
+            event.preventDefault();
+
+            /* get some values from elements on the page: */
+            var $form = $( this ),
+            url = $form.attr( 'action' );
+
+            /* Send the data using post */
+            var posting = $.post(
+                url,
+                {
+                    name: $('#teeny-contact-form [name=name]').val(),
+                    email: $('#teeny-contact-form [name=email]').val(),
+                    message: $('#teeny-contact-form [name=message]').val(),
+                    recaptcha_challenge_field: Recaptcha.get_challenge(),
+                    recaptcha_response_field: Recaptcha.get_response()
+                },
+                function(data, textStatus, xhr) {
+                    var recaptcha_error = false;
+                    if (!!data.error && data.error == 'recaptcha') {
+                        recaptcha_error = true;
+                    }
+
+                    if (!recaptcha_error) {
+                        $('#teeny-contact-form input').val('');
+                        $('#teeny-contact-form textarea').val('');
+                    }
+                    Recaptcha.reload();
+                    alert(data.notification);
+                }
+            );
+        });
+    </script>
+
+    {% if context.edit_mode %}
+        <script src="js/edit.js"></script>
+    {% endif %}
+
+    </body>
+</html>

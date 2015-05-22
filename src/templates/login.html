@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-wide.css" />
+    </head>
+
+    <body>
+        <div id="main">
+            <h2>Login</h2>
+
+            {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+
+            <form action="{{ url_for('login') }}" method=post>
+                <dl>
+                    <dt>Username:
+                    <dd><input type=text name=username>
+                    <dt>Password:
+                    <dd><input type=password name=password>
+                    <dd><input type=submit value=Login>
+                </dl>
+            </form>
+        </div>
+    </body>
+</html>

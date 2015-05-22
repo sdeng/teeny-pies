@@ -1,0 +1,28 @@
+/*
+	Prologue 1.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+#main > section.book-feature .image figcaption{
+margin-top: 0;
+}
+
+
+@media (max-width: 1125px) {
+	#main > section.book-feature .image figcaption{
+		text-align: center;
+		margin: 2em auto 0;
+		float: none;
+		width: 100%;
+		max-width: 500px;
+	}
+	
+	#main > section.book-feature .image img{
+		float: none;
+		margin: 0 auto;
+		min-width: 290px;
+		max-width: 375px;
+		width: 100%;
+	}
+}
